@@ -1,0 +1,32 @@
+img {
+    border-radius: 10px;
+    width: 320px;
+  }
+  
+  .select-input {
+    width: 108px; 
+    margin-bottom: 8px;
+  }
+  
+  .detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+  }
+  
+  .detail-item {
+    margin-left: 128px;
+    margin-right: 128px;
+  }
+  
+  .back-link {
+    margin-top: 8px;
+  }
+  .add-to-cart-btn {
+    width: 108px; 
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #33B5E5 ;
+  }

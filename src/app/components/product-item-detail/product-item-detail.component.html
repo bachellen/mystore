@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="detail-container">
+<img src={{product.url}} >
+<div class="detail-item ">
+<h3 class="">{{product.name}}</h3>
+<p> {{product.price}}$</p>
+<p class="">{{product.description}}</p>
+<select class="select-input" [(ngModel)]="amount">
+    <option  selected value='1' >1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+</select>
+<br>
+<button (click)="AddToCart(product,amount)" class="add-to-cart-btn"> Add to cart</button>
+<br>
+<a [routerLink]="['']">&larr; Back to product list </a>
+</div>
+</div>

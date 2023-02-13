@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div *ngIf="products.length; else emptyPage" class="cart">
+<div class="cart-panel">
+<div class="cart-container" >
+    <div class="cart-item" *ngFor="let product of products" >
+        <div class="cart-item-details">
+        <img src={{product.url}}>
+       
+            <span>{{ product.name }}</span>
+            <span>{{ product.price }}$</span>
+
+     <span>Amount:
+      <input type="number" class="number-input" #amount min="0" max="10" (click)="OnChange($event,product)" [(ngModel)]="product.amount">
+    </span> 
+  </div>
+      </div> 
+      <div class="cart-item">
+      <br>
+      <h2>Total: {{ Total }}$</h2>  
+     </div>  
+     
+</div>
+</div>
+<div class="form-margin"><app-form (checkout)="Checkout($event)"></app-form></div>
+</div>
+<ng-template #emptyPage>
+    <div class="empty-cart-message">
+      <h1> Your Cart is empty.</h1>
+    </div>
+</ng-template>

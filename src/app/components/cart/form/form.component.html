@@ -1,0 +1,40 @@
+<form  [formGroup]="order" (ngSubmit)="SubmitOrder()">
+Full name <br><br>
+<input 
+required 
+ minlength="3" 
+ type="text"
+ placeholder="(minimum 3 characters)"
+ id="fullName" formControlName = "fullName">
+
+
+
+<br><br> <label>Address</label> <br><br>
+<input required 
+minlength="6" 
+type="text"
+ placeholder="(minimum 6 characters)" 
+ id="address" formControlName = "address"
+>
+
+
+
+<br><br> Credit crad number <br><br>
+<input required
+ minlength="16"
+  maxlength="16"
+   type="number"
+   id="creditcard" formControlName = "creditcard"
+   
+    placeholder="(16 digit-number)"
+    >
+ 
+<br> <br>
+
+
+<button
+ type="submit"
+ class="submit-btn"
+ [disabled]="order.invalid">Submit</button>
+
+</form>
