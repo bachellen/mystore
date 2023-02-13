@@ -5,8 +5,15 @@ required
  minlength="3" 
  type="text"
  placeholder="(minimum 3 characters)"
- id="fullName" formControlName = "fullName">
-
+ id="fullName" formControlName = "fullName"
+ >
+ <!-- <div *ngIf="fullName.invalid && fullName.dirty">
+    <div *ngIf="fullName.errors.required">
+      Please provide your name.
+    </div>
+    <div *ngIf="fullName.errors.minlength">
+      The name must contain at least 3 characters.
+    </div> -->
 
 
 <br><br> <label>Address</label> <br><br>
@@ -16,7 +23,13 @@ type="text"
  placeholder="(minimum 6 characters)" 
  id="address" formControlName = "address"
 >
-
+<!-- <div *ngIf="address.invalid && address.dirty">
+    <div *ngIf="address.errors.required">
+      Please provide your address .
+    </div>
+    <div *ngIf="address.errors.minlength">
+      The address must contain at least 6 characters.
+    </div> -->
 
 
 <br><br> Credit crad number <br><br>
@@ -28,7 +41,13 @@ type="text"
    
     placeholder="(16 digit-number)"
     >
- 
+    <!-- <div *ngIf="creditcard.invalid && creditcard.dirty">
+        <div *ngIf="creditcard.errors.required">
+          Please provide your creditcard .
+        </div>
+        <div *ngIf="creditcard.errors.maxlength">
+          The creditcard must contain less than 16 digit.
+        </div> -->
 <br> <br>
 
 
