@@ -6,14 +6,11 @@ required
  type="text"
  placeholder="(minimum 3 characters)"
  id="fullName" formControlName = "fullName"
+ (ngModelChange)="validateName($event)"
  >
- <!-- <div *ngIf="fullName.invalid && fullName.dirty">
-    <div *ngIf="fullName.errors.required">
-      Please provide your name.
-    </div>
-    <div *ngIf="fullName.errors.minlength">
-      The name must contain at least 3 characters.
-    </div> -->
+ <div *ngIf="fullname" class="error-message">
+    Please enter your full name with at least 3 characters
+</div>
 
 
 <br><br> <label>Address</label> <br><br>
@@ -22,32 +19,25 @@ minlength="6"
 type="text"
  placeholder="(minimum 6 characters)" 
  id="address" formControlName = "address"
+ (ngModelChange)="validateAddress($event)"
 >
-<!-- <div *ngIf="address.invalid && address.dirty">
-    <div *ngIf="address.errors.required">
-      Please provide your address .
-    </div>
-    <div *ngIf="address.errors.minlength">
-      The address must contain at least 6 characters.
-    </div> -->
+<div *ngIf="address" class="error-message">
+    Please enter address with at least 6 characters
+</div>
 
 
 <br><br> Credit crad number <br><br>
 <input required
  minlength="16"
   maxlength="16"
-   type="number"
+   type="text"
    id="creditcard" formControlName = "creditcard"
-   
+   (ngModelChange)="validateCard($event)"
     placeholder="(16 digit-number)"
     >
-    <!-- <div *ngIf="creditcard.invalid && creditcard.dirty">
-        <div *ngIf="creditcard.errors.required">
-          Please provide your creditcard .
-        </div>
-        <div *ngIf="creditcard.errors.maxlength">
-          The creditcard must contain less than 16 digit.
-        </div> -->
+    <div *ngIf="creditcard" class="error-message">
+        Please enter valid card number with 16 digit only
+    </div>
 <br> <br>
 
 

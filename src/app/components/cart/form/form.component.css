@@ -5,3 +5,8 @@
     border-radius: 5px;
     background-color: #33B5E5 ;
   }
+
+.error-message {
+   color: red;
+   font-size: small;
+}

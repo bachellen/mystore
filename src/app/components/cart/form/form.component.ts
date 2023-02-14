@@ -1,4 +1,5 @@
 import { Component, Output,EventEmitter } from '@angular/core';
+import { fakeAsync } from '@angular/core/testing';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,9 +8,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent  {
-// fullname : string = ""
-// address : string = ""
-// creditcard : string = ""
+
+  fullname : boolean = false
+  address : boolean = false
+  creditcard : boolean = false
 err : boolean = true
  @Output() checkout = new EventEmitter()
 order: FormGroup;
@@ -21,7 +23,31 @@ constructor() {
     creditcard :new FormControl(null, [Validators.required,Validators.maxLength(16)])
   });
 }
-
+validateCard(value : any) {
+  if(isNaN(+value)){
+    this.creditcard = true
+    return
+  } 
+  if(value.length <= 15 || value.length > 16 ) {
+    this.creditcard = true
+    return
+  }
+  this.creditcard = false
+  }
+  validateAddress( value : any) {
+    if(value.length < 6){
+      this.address = true
+      return
+    }
+    this.address = false
+  }
+  validateName( value : any) {
+    if(value.length < 3){
+      this.fullname = true
+      return
+    }
+    this.fullname = false
+  }
 SubmitOrder() {
   if (this.order.invalid) {
     alert('Enter correct inputs')
