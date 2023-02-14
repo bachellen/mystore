@@ -1,5 +1,15 @@
 # Mystore
 
+Mystore is a single-page Angular application. It displays a list of products which can be placed in a shopping cart and then purchased.
+Functions:
+1 - Browse the product list.
+2. View a specific product's details.
+3- Put items in the shopping cart.
+4. View items in the shopping cart.
+5. Remove a product from the shopping cart.
+6. Calculate the total for the cart.
+7. Check out the items in your cart.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
 
 ## Development server
